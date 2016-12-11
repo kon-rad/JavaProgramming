@@ -38,12 +38,48 @@ public class DemoTennisGame
 {
     public static void main(String[] args)
     {
-    DoublesTennisGame game = new DoublesTennisGame();
-    game.setNames("jack", "jess", "peter", "patti");
-    JOptionPane.showMessageDialog(null, "Game names: " 
-        + game.getPlayer1() + "\n" + game.getPlayer2() 
-        + "\n" + game.getPlayer1Partner() + "\n " + game.getPlayer2Partner());
-    }    
+    //Demo of DoublesTennisGame subclass object
+    DoublesTennisGame doublesGame = new DoublesTennisGame();
+    doublesGame.setNames("Jack", "Jessi", "Peter", "Patti");
+    doublesGame.setFinalScores(2, 4);
+    
+    JOptionPane.showMessageDialog(null, "Player 1: " 
+        + doublesGame.getPlayer1() + "\nPartner: " + doublesGame.getPlayer1Partner() 
+        + "\nPlayer 2: " + doublesGame.getPlayer2() + "\nPartner: " 
+        + doublesGame.getPlayer2Partner() + "\nTeam 1 Score: " + doublesGame.getPlayer1FinalScoreString() 
+        + "\nTeam 2 Score: " + doublesGame.getPlayer2FinalScoreString());
+        
+    //Demo of DoublesTennisGame subclass object with incorrect score input
+    DoublesTennisGame doublesGameError = new DoublesTennisGame();
+    doublesGameError.setNames("Adam", "Eric", "Joy", "Tony");
+    doublesGameError.setFinalScores(4, 4);
+    
+    JOptionPane.showMessageDialog(null, "Player 1: " 
+        + doublesGameError.getPlayer1() + "\nPartner: " + doublesGameError.getPlayer1Partner() 
+        + "\nPlayer 2: " + doublesGameError.getPlayer2() + "\nPartner: " 
+        + doublesGameError.getPlayer2Partner() + "\nTeam 1 Score: " + doublesGameError.getPlayer1FinalScoreString() 
+        + "\nTeam 2 Score: " + doublesGameError.getPlayer2FinalScoreString());
+    
+    //Demo of TennisGame superclass object   
+    TennisGame tennis = new TennisGame();
+    tennis.setNames("Paul", "Micheal");
+    tennis.setFinalScores(4, 3);
+     
+    JOptionPane.showMessageDialog(null, "Player 1: " 
+        + tennis.getPlayer1() + "\nPlayer 2: " + tennis.getPlayer2() 
+        + "\nTeam 1 Score: " + tennis.getPlayer1FinalScoreString() 
+        + "\nTeam 2 Score: " + tennis.getPlayer2FinalScoreString());
+
+    //Demo of TennisGame superclass object with incorrect score input  
+    TennisGame tennisError = new TennisGame();
+    tennisError.setNames("Frank", "Suzie");
+    tennisError.setFinalScores(5, 2);
+     
+    JOptionPane.showMessageDialog(null, "Player 1: " 
+        + tennisError.getPlayer1() + "\nPlayer 2: " + tennisError.getPlayer2() 
+        + "\nTeam 1 Score: " + tennisError.getPlayer1FinalScoreString() 
+        + "\nTeam 2 Score: " + tennisError.getPlayer2FinalScoreString());
+    }
 }
 
 
