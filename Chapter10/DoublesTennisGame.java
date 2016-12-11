@@ -9,7 +9,7 @@
  * Exercise: 3
  * Title: Java Programming: Level II 
  *
- * 
+ * Description:
  * Create a class named TennisGame that holds data about a single tennis game. The
  * class has six fields: the names of the two players, the integer final scores for the
  * players, and the String values of the final scores. Include a get method for each of
@@ -37,7 +37,7 @@
 public class DoublesTennisGame extends TennisGame
 {
 
-    //Declare data fields
+    // Declare data fields
     private String player1Partner;
     private String player2Partner;
     

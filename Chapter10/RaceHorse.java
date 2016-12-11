@@ -9,7 +9,7 @@
  * Exercise: 1
  * Title: Java Programming: Level II 
  *
- * 
+ * Description:
  * Create a class named Horse that contains data fields for the name, color, 
  * and birth year. Include get and set methods for these fields. Next, create 
  * a subclass named RaceHorse, which contains an additional field that holds 
@@ -30,7 +30,7 @@
 public class RaceHorse extends Horse
 {
 
-    //Declare data fields
+    // Declare data fields
     private int numberOfRaces;
     private int standing;
     
