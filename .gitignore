@@ -1,0 +1,4 @@
+*.class
+**/*.class
+/Chapter10/JavaApplication5/nbproject/private/
+/Chapter10/Candle/nbproject/private/
