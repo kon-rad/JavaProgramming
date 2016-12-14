@@ -40,11 +40,11 @@ public class DemoCandles
         candle002.setHeight(13);
         
         System.out.println("Your scented candle has a " + candle001.getColor() 
-            + " it is " + candle001.getHeight() + " inches tall, it has the scent of "
+            + " color, it is " + candle001.getHeight() + " inches tall, it has the scent of "
             + candle001.getScent() + " and it costs " + candle001.getScentedPrice() + " dollars.");
             
         System.out.println("Your non-scented candle has a " + candle002.getColor() 
-            + " it is " + candle002.getHeight() + " inches tall and it costs " 
+            + " color, it is " + candle002.getHeight() + " inches tall and it costs " 
             + candle002.getPrice() + " dollars.");
           
     }    
