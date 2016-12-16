@@ -26,6 +26,7 @@ public abstract class Auto
 {
     private String make;
     protected double price;
+    protected 
     
     // Constructor
     public Auto(String m)

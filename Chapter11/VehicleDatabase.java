@@ -41,9 +41,7 @@ public class VehicleDatabase
             outString.append(vehicles[x].toString());
         }
         JOptionPane.showMessageDialog(null, "Our available Vehicles include:\n" 
-            + outString);
-         
-        
+            + outString); 
     }
 }
 
