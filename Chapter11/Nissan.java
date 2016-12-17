@@ -20,11 +20,14 @@
  *
  */    
 
+import java.text.NumberFormat;
+
  
  
 public class Nissan extends Auto
 {
-    
+    NumberFormat currency = NumberFormat.getCurrencyInstance();
+
     public Nissan()
     {
         super("Nissan");
@@ -33,12 +36,12 @@ public class Nissan extends Auto
     }
     public void setPrice()
     { 
-        price = 18000; 
+        price = 18000.00; 
     }
     public void print()
     {
-        System.out.println("A brand new " + getMake() + " car costs $" 
-            + getPrice());
+        System.out.println("A brand new " + getMake() + " car costs " 
+            + currency.format(getPrice()));
     }
 }
 

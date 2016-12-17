@@ -11,7 +11,7 @@
  *
  *
  */  
- package com.vehicleswesell.vehicle;
+package com.vehicleswesell.vehicle;
 
  
  

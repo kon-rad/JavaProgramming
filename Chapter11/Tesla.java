@@ -18,24 +18,29 @@
  * to display information about different cars. Save the files as Auto.java, 
  * Ford.java, Chevy.java, and UseAuto.java.
  *
- */   
-import javax.swing.*;
+ */    
 
+import java.text.NumberFormat;
  
  
 public class Tesla extends Auto
 {
-    
+    NumberFormat currency = NumberFormat.getCurrencyInstance();
+
     public Tesla()
     {
         super("Tesla"); 
         setPrice();
+        print();
     }
     public void setPrice()
+    { 
+        price = 35000.00; 
+    }
+    public void print()
     {
-        String input;
-        input = JOptionPane.showInputDialog(null, "Enter Tesla auto price");
-        price = Integer.parseInt(input); 
+        System.out.println("A brand new " + getMake() + " car costs " 
+            + currency.format(getPrice()));
     }
 }
 

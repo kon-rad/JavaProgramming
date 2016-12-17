@@ -14,7 +14,7 @@
  * and set methods for these fields; the setPrice() method is abstract. Create two 
  * subclasses for individual automobile makers (for example, Ford or Chevy), and 
  * include appropriate setPrice() methods in each subclass (for example, $20,000 or
- * $22,000). FInally, write an application that uses the Auto class and subclasses
+ * $22,000). Finally, write an application that uses the Auto class and subclasses
  * to display information about different cars. Save the files as Auto.java, 
  * Ford.java, Chevy.java, and UseAuto.java.
  *
@@ -26,7 +26,6 @@ public abstract class Auto
 {
     private String make;
     protected double price;
-    protected 
     
     // Constructor
     public Auto(String m)
@@ -50,6 +49,7 @@ public abstract class Auto
         make = mke;
     }
     public abstract void setPrice();
+    public abstract void print();
 }
 
 
