@@ -10,18 +10,23 @@
  *
  * You Do It:
  * Creating a Class That Automatically Throws Exceptions
- *
+ * Creating a Class That Passes on an Exception Object
+ * Creating an Application That Can Catch Exceptions
+ * Extending a Class That Throws Exceptions
+ * Creating an Exception Class
+ * 
  */   
 import javax.swing.*;
 
  
  
-public class Menu
+public class Menu2
 {
     protected String[] entreeChoice = {"Rosemary Chicken", "Beef Wellington",
         "Maine Lobster"};
     private String menu = "";
     private int choice;
+    protected char initial[] = new char[entreeChoice.length];
     
     public String displayMenu()
     {
