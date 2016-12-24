@@ -26,6 +26,14 @@ public class DemoFileAccess
         {
             System.out.println("This file exists and it is " + myFile.length() 
                 + " bytes long");
+            if (myFile.canRead())
+                System.out.println("It is ok to read");
+            else
+                System.out.println("It is not ok to read"); 
+            if (myFile.canWrite())
+                System.out.println("It is ok to write");
+            else    
+                System.out.println("It is not ok to write");
         } 
         else
         {
