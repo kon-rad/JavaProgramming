@@ -27,26 +27,31 @@ public class BadSubscriptCaught
 {
     public static void main(String[] args) 
     {
+        int nameInt = 0;
+        String nameString;
         String[] tenFirstNames = {
             "Tom", "Jackie", "Arnold", "Billy", "Ted", "Zach", "Joseph", "Mary", 
             "Dennis", "Luke"
         };
         
-        try 
+        while (nameInt != 99)
         {
-         
-            String nameString = JOptionPane.showInputDialog(null, 
-                "Enter a number between 1 and 10 to display first name");
-            int nameInt = Integer.parseInt(nameString);
-            JOptionPane.showMessageDialog(null, tenFirstNames[nameInt - 1]);
-        
+           try 
+           {
+               nameString = JOptionPane.showInputDialog(null, 
+                   "Enter a number between 1 and 10 to display first name");
+               nameInt = Integer.parseInt(nameString);
+               if (nameInt == 99)
+                   break;
+               JOptionPane.showMessageDialog(null, tenFirstNames[nameInt - 1]);
+           }
+           catch(Exception e)
+           {
+               JOptionPane.showMessageDialog(null, 
+                   "Incorrect entry, you must enter a number between 1 and 10");
+           } 
         }
-        catch(Exception e)
-        {
-            JOptionPane.showMessageDialog(null, 
-                "Incorrect entry, you must enter a number between 1 and 10");
-        }
-        
+        JOptionPane.showMessageDialog(null, "Goodbye");
     }
 }
 

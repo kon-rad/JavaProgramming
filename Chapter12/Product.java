@@ -27,12 +27,33 @@
 import javax.swing.*;
  
  
-public class ProductException extends Exception
+public class Product
 {  
-    public ProductException(String errorDescription) 
+    private int productNum;
+    private double price;
+    private String errorDescription = "";
+    
+    public Product(int pnm, double pri) throws ProductException
     {
-        super(errorDescription);
+        productNum = pnm;
+        price = pri;
+        
+        if (productNum < 100 || productNum >= 1000) 
+            throw (new ProductException("Error! Product Number: " + productNum + " is not three digits long"));
+        else if (price < 0.01)
+            throw (new ProductException("Error! Price: " + price + " is less than $0.01"));
+        else if (price > 1000.0)
+            throw (new ProductException("Error! Price: " + price + " is more than $1,000.00"));
     } 
+    
+    public int getProductNumber() 
+    {
+        return productNum;
+    }
+    public double getPrice() 
+    {
+        return price;
+    }
 }
 
 

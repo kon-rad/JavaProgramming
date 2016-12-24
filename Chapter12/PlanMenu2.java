@@ -34,14 +34,14 @@ public class PlanMenu2
             entree = selection;
             guestChoice = entree.getGuestChoice();
         }
-        catch(MenuException error)
-        {
-            guestChoice = error.getMessage();
-        }
-        catch(Exception error)
-        {
-            guestChoice = "an invalid selection";
-        }
+         catch(MenuException error)
+         {
+             guestChoice = error.getMessage();
+         }
+//         catch(Exception error)
+//         {
+//             guestChoice = "an invalid sselection";
+//         }
         
         JOptionPane.showMessageDialog(null, "You chose " + guestChoice);
     }

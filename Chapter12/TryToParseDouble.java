@@ -46,9 +46,7 @@ public class TryToParseDouble
                 JOptionPane.showMessageDialog(null, "Goodbye!");
            else 
                JOptionPane.showMessageDialog(null, "You had entered " + inputDouble);
-        }
-        
-        
+        } 
     }
 }
 
