@@ -19,25 +19,67 @@
  * 
  */   
 import java.io.*;
-import java.util.Date;
+import java.util.*;
  
  
 public class DisplayBook
 {  
     public static void main(String[] args)
     {
-        File txtFile = new File("Quote.txt");
-        File pagesFile = new File("Quote.pages");
-        
-        if (txtFile.exists() && pagesFile.exists())
-        {  
-            System.out.println("The file named " + txtFile.getName() 
-                + "  contains " + txtFile.length() 
-                + " bytes of data.\nThe file named " 
-                + pagesFile.getName() + " contains " + pagesFile.length()
-                + ".\nThe ratio is 1 to " + (pagesFile.length() / txtFile.length()) 
-                + ".");
-        }
+        int letter;
+        Scanner input = new Scanner(System.in); 
+        char optionChoice = 'B';
+       
+        while (optionChoice != 'C')
+        {
+            if (optionChoice == 'B')
+            {
+            
+                try
+                {
+                    File bookFile = new File("favoriteBook.txt");
+                    FileOutputStream output = new FileOutputStream(bookFile);
+                    
+                    System.out.println("Please enter the name of "
+                        + " your favorite book");
+                    String inputBook = input.nextLine();
+                  
+                    for (int i = 0; i < inputBook.length(); i++) 
+                        output.write(inputBook.charAt(i));
+                }
+                catch(IOException exc)
+                {
+                    System.out.println("Oops! Can't display file!");
+                }
+
+            }
+            System.out.println("The name had been stored in a text file" 
+                + "\nSelect one of the following options"
+                + "\nA Read the file contents"
+                + "\nB Write a new favorite book title"
+                + "\nC Exit program");
+            optionChoice = input.next().charAt(0);
+            input.nextLine();
+                   
+            if (optionChoice == 'A')
+            {  
+                try
+                {
+                    File bookFile = new File("favoriteBook.txt");
+                    FileInputStream in = new FileInputStream(bookFile);
+                       
+                    while ((letter = in.read()) != -1)
+                    {
+                        System.out.println((char) letter);
+                    }
+                    in.close();
+                }
+                catch(IOException exc)
+                {
+                    System.out.println("Oops! Can't display file!");
+                }
+            }
+        } 
     } 
 }
 
