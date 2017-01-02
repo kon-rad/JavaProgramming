@@ -28,7 +28,7 @@ public class FileStatistics2
     public static void main(String[] args)
     {
         File txtFile = new File("Quote.txt");
-        File pagesFile = new File("Quote.pages");
+        File pagesFile = new File("Quote.doc");
         
         if (txtFile.exists() && pagesFile.exists())
         {  
