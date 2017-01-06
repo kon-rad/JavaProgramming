@@ -5,11 +5,11 @@
  * MEID: KON2155430
  * On: January 05, 2017 
  * Chapter: 15
- * Page: 822
+ * Page: 824
  * Title: Java Programming: Level II 
  *
  * You Do It
- * Using FlowLayout
+ * Using CardLayout
  * 
  * 
  * 
@@ -17,7 +17,7 @@
 import javax.swing.*; 
 import java.awt.*; 
  
-public class JFlowLayoutRight extends JFrame {  
+public class JCardLayout extends JFrame {  
     // Data Fields 
     private JButton nb = new JButton("North");
     private JButton sb = new JButton("South");
@@ -25,22 +25,22 @@ public class JFlowLayoutRight extends JFrame {
     private JButton wb = new JButton("West");
     private JButton cb = new JButton("Center");
     
-    public JFlowLayoutRight() 
+    public JCardLayout() 
     {
         // Create JFrame
-        setLayout(new FlowLayout(FlowLayout.RIGHT)); 
-        add(sb);
-        add(nb);
-        add(eb);
-        add(wb);
-        add(cb);
+        setLayout(new CardLayout()); 
+        add("south", sb);
+        add("north", nb);
+        add("east", eb);
+        add("west", wb);
+        add("center", cb);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);      
     }
     
     public static void main(String[] args)
     { 
          // Run Application
-         JFlowLayoutRight jbl = new JFlowLayoutRight();
+         JCardLayout jbl = new JCardLayout();
          jbl.setSize(250, 250);
          jbl.setVisible(true);
     } 
