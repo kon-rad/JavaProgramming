@@ -8,7 +8,7 @@
  * Page: 859
  * Title: Java Programming: Level II 
  *
- * The Checkerboard Class
+ * Event Selector
  * 
  * 
  * 

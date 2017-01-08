@@ -1,59 +1,74 @@
-import javax.swing.*;
-import java.awt.*;
+/*
+ * Created by Konrad Gnat
+ * Course Number: CIS263AA
+ * Section Number: 36454
+ * MEID: KON2155430
+ * On: January 07, 2017 
+ * Chapter: 15
+ * Page: 870
+ * Exercise 7
+ * Title: Java Programming: Level II 
+ *
+ * Description:
+ * Write an application that lets you determine the integer value returned 
+ * by the InputEvent method getModifiers() when you click your left, right, 
+ * or if you have one, middle mouse button on a JFrame. Save the file as 
+ * JLeftOrRight.java
+ * 
+ * 
+ */   
+import javax.swing.*;  
+import java.awt.*; 
 import java.awt.event.*;
-public class JLeftOrRight extends JFrame implements MouseListener
-{
-    private JLabel label = new JLabel("Click the screen...");
 
-    /**
-     * Constructor.
-     */
-    public JLeftOrRight()
+
+public class JLeftOrRight  extends JFrame implements MouseListener
+{  
+    // Data Fields 
+    private JLabel label = new JLabel("Click on this screen with any mouse button...");
+    
+    
+    public JLeftOrRight() 
     {
-        super("Which Mouse Button?");
-        setSize(500, 500);
+        // Create Frame
+        super("Left or Right Mouse Click Application");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        addMouseListener(this);
+        setLayout(new FlowLayout());
         add(label);
-        setVisible(true);
+        addMouseListener(this);
     }
-
-    /**
-     * Display the mouse click modifier to the user when the mouse is clicked.
-     */
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        int modifier = e.getModifiers();
-        if (modifier == MouseEvent.BUTTON1_MASK)
-        {
-            label.setText("Left button clicked (" + modifier + ")");
-        }
-        else if (modifier == MouseEvent.BUTTON2_MASK)
-        {
-            label.setText("Middle button clicked (" + modifier + ")");
-        }
-        if (modifier == MouseEvent.BUTTON3_MASK)
-        {
-            label.setText("Right button clicked (" + modifier + ")");
-        }
-    }
-    @Override
-    public void mouseEntered(MouseEvent e) {}
-
-    @Override
-    public void mouseExited(MouseEvent e) {}
-
-    @Override
-    public void mousePressed(MouseEvent e) {}
-
-    @Override
-    public void mouseReleased(MouseEvent e) {}
-
-    /**
-     * Init.
-     */
-    public static void main(String[] args)
+    
+    public void mouseClicked(MouseEvent e) 
     {
-        JLeftOrRight frame = new JLeftOrRight();
+        // Change label to display message on which mouse button was clicked 
+        int button = e.getModifiers();
+        String msg = "";
+        if (button == e.BUTTON1_MASK)
+            msg += "You clicked the left mouse button. Modifier: " + button + ". ";
+        else if(button == e.BUTTON2_MASK) 
+            msg += "You clicked the middle mouse button. Modifier: " + button + ".";
+        else if (button == e.BUTTON3_MASK) 
+            msg += "You clicked the right mouse button. Modifier:  " + button + ".";
+        label.setText(msg);
     }
+    public void mouseEntered(MouseEvent e) 
+    {
+    }
+    public void mouseExited(MouseEvent e)
+    {
+    }
+    public void mousePressed(MouseEvent e) 
+    {
+    }
+    public void mouseReleased(MouseEvent e)
+    {
+    }
+    
+    public static void main(String[] args)
+    { 
+         // Run Application
+         JLeftOrRight jlor = new JLeftOrRight();
+         jlor.setSize(400, 400);
+         jlor.setVisible(true);
+    } 
 }

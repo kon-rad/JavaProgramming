@@ -61,7 +61,6 @@ public class JMovingFrame  extends JFrame implements ActionListener
     public void actionPerformed(ActionEvent e) 
     {
         // Add label to a randomly assigned panel and refresh
-        System.out.println("clicked");
         int randomPanel = (int) (Math.random() * 8);
         switch(randomPanel) 
         {
