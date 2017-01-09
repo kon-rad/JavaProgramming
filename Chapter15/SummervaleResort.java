@@ -31,16 +31,15 @@ public class SummervaleResort  extends JFrame implements ActionListener
     private JMenu menu3 = new JMenu("Dining Options");
     private JMenu menu4 = new JMenu("Activities");
     private JMenuItem exit = new JMenuItem("Exit");
-    private JMenuItem single = new JMenuItem("Single");
-    private JMenuItem doubleBed = new JMenuItem("Double");
-    private JMenuItem threeBeds = new JMenuItem("Three Bed");
+    private JMenuItem single = new JMenuItem("Single Room");
+    private JMenuItem doubleBed = new JMenuItem("Double Bedroom Suite");
+    private JMenuItem threeBeds = new JMenuItem("Three Bedroom Suite");
     private JMenuItem vege = new JMenuItem("Vegetarian");
     private JMenuItem nonvege = new JMenuItem("Non-vegetarian");
     private JMenuItem golf = new JMenuItem("Golf");
     private JMenuItem scuba = new JMenuItem("Scuba Diving");
     private JMenuItem beach = new JMenuItem("Beach");
-    
-    
+    private JLabel label1 = new JLabel("See what we offer!");   
     
     
     public SummervaleResort() 
@@ -52,13 +51,39 @@ public class SummervaleResort  extends JFrame implements ActionListener
         composeMenus();
         addActionListeners();
         layoutComponents();
-        
+        add(label1);
     }
     
     public void actionPerformed(ActionEvent e) 
     {
-        // Change label to display message on which mouse button was clicked 
-        
+        // Change label to display message
+        Object source = e.getSource();
+        if(source == single)
+            label1.setText("Our standard room with single bed is approximately 20"
+                + " SqFt. and is equipped with a mini fridge.");
+        else if(source == exit)
+            System.exit(0);
+        else if(source == doubleBed)
+            label1.setText("The double bedroom suite starts at $189 and is our most"
+                + " popular choice! Enjoy it's fully equipped kitchen.");
+        else if(source == threeBeds)
+            label1.setText("The three bedroom suite offers the ultimate in peace!"
+                + " Enjoy a full size flatscreen TV and an oversized jetted tub.");
+        else if(source == vege)
+            label1.setText("The vegeterian menu offers the highest quality meat-free"
+                + " ingrediants to create delicious flavor combinations.");
+        else if(source == nonvege)
+            label1.setText("Meat lovers will feel great having a wide variety of "
+                + " meals to choose from. Hamburger's and steaks galore!");
+        else if(source == golf)
+            label1.setText("The center piece of Summervale Resort is our five star "
+                + "golf course that lures people from all over the globe!");
+        else if(source == scuba)
+            label1.setText("The greatest adventure awaits for you in the beautiful "
+                + "coral reefs just a few feet from shore.");
+        else if(source == beach)
+            label1.setText("Golden beaches sprayed with the Sun's rays await your "
+                + "long walks and the best times ever.");
     }
     public void composeMenus() 
     {
@@ -97,7 +122,7 @@ public class SummervaleResort  extends JFrame implements ActionListener
     { 
          // Run Application
          SummervaleResort sr = new SummervaleResort();
-         sr.setSize(400, 400);
+         sr.setSize(800, 200);
          sr.setVisible(true);
     } 
 }

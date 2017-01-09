@@ -65,7 +65,7 @@ public class JVowelConsonant extends JFrame implements ActionListener
         button07.setText(randomLetter());
         button08.setText(randomLetter());
         
-                panel01.add(button01);
+        panel01.add(button01);
         panel01.add(button02);
         panel01.add(button03);
         panel01.add(button04);
