@@ -7,7 +7,7 @@
  * On: January 10, 2017 
  * Chapter: 16
  * Page: 939
- * Exercise 7
+ * Exercise 7a
  * Title: Java Programming: Level II 
  *
  * Description:
