@@ -36,13 +36,79 @@ import java.awt.Color;
 
 public class JLottery2 extends JFrame implements ItemListener
 {  
+    int count = 0;
+    int[] pickedArray = new int[6];
+    int matches = 0;
+    String pickedNumbers = " ";
+    String lotteryNumbers = " ";
+    int[] randomNumbersArray = new int[6];
+    JLabel labelPickedNumbers =  new JLabel(" ");
+    JLabel labelLotteryNumbers = new JLabel(" ");
+    JLabel[] checkLabels = new JLabel[30];
+    JCheckBox[] checkBoxes = new JCheckBox[30];
+    JLabel mainLabel = new JLabel("Pick six number");
+    
+    public void generateRandomNumbers() {
+        for(int n = 0; n < 7; ++n) 
+        {
+            List<long> randomNumberList = Arrays.aslist(randomNumbersArray);
+            int newNumber = Math.random() * 30 + 1;
+            if( randomNumbersList.contains(newNumber))
+                --n;
+            else
+                randomNumbersArray[n] = newNumber;
+        }
+    }
+    
+    public JLottery2() 
+    {
+        super("Six Check Boxes Lottery");
+        generateRandomNumbers();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(new FlowLayout());
+        add(mainLabel);
+        for (int i = 0; i < 31; ++i) 
+        {
+            add(checkBoxes[i]);
+            checkLabels[i].setText(" " + (i + 1));
+            add(checkLabels[i]);
+            checkLabels[i].addItemListener(this);
+        }
+        add(labelPickedNumbers);
+        add(labelLotteryNumbers);
+    }
+    
+    public void itemStateChanged(ItemEvent event) 
+    {
+        Object source = event.getSource();
+        for(int j = 0; j < 31; ++j) 
+        {
+            if(source == checkBoxes[j])
+            {
+                pickedNumbers += " " + (j + 1) ;
+                pickedArray[count] = (j + 1);
+                count++;
+            }
+        }
+        if(count == 6) 
+        {
+            for(int m = 0; m < 7; ++m) 
+            {
+                if(randomNumbersList.contains(pickedArray[m]))
+                    matches++;
+            }
+            lotteryNumberss += " " + randomNumbersArray[m]; 
+            labelLotteryNumbers.setText("Lottery Numbers: " + lotteryNumbers);
+            labelPickedNumbers.setText("YourNumbers: " + pickedNumbers);
+        }
+    }
 
     
     public static void main(String[] args)
     { 
          // Run Application
-         JSmileFace2 jnc= new JSmileFace2();
-         jnc.setSize(400, 400);
-         jnc.setVisible(true);
+         JLottery2 jl2= new JLottery2();
+         jl2.setSize(400, 400);
+         jl2.setVisible(true);
     } 
 }
