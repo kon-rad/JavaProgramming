@@ -70,7 +70,7 @@ public class JSmileFace2 extends JFrame implements ActionListener
             pen.drawOval(50, 50, 200, 200);
             pen.fillOval(115, 115, 12, 12);
             pen.fillOval(165, 115, 12, 12);
-        pen.drawArc(90, 100, 120, 120, 0, -180);
+            pen.drawArc(90, 100, 120, 120, 0, -180);
             count++;
         }
     }
