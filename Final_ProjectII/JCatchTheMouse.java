@@ -29,8 +29,6 @@
 import javax.swing.*;  
 import java.awt.*; 
 import java.awt.event.*;
-import java.util.List;
-import java.util.Arrays;
 
 
 public class JCatchTheMouse extends JFrame implements ActionListener
